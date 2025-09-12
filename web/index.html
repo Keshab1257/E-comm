@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KESHAB Enterprises - Your One-Stop Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>KESHAB Enterprises</h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search products..." class="form-control">
+                    <button id="search-btn" class="btn btn--primary">Search</button>
+                </div>
+                <div class="header-actions">
+                    <button id="cart-btn" class="btn btn--outline">
+                        🛒 Cart (<span id="cart-count">0</span>)
+                    </button>
+                    <button id="login-btn" class="btn btn--secondary">Login</button>
+                    <button id="admin-btn" class="btn btn--outline">Admin</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#electronics" class="nav-link">Electronics</a></li>
+                <li><a href="#clothing" class="nav-link">Clothing</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#home-garden" class="nav-link">Home & Garden</a></li>
+                <li><a href="#sports" class="nav-link">Sports</a></li>
+                <li><a href="#beauty" class="nav-link">Beauty</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Homepage -->
+        <section id="homepage" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Welcome to KESHAB Enterprises</h2>
+                        <p>Discover amazing products at unbeatable prices</p>
+                        <button class="btn btn--primary btn--lg">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Categories Grid -->
+                <section class="categories-section">
+                    <h3>Shop by Category</h3>
+                    <div class="categories-grid" id="categories-grid">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Featured Products -->
+                <section class="featured-section">
+                    <h3>Featured Products</h3>
+                    <div class="products-grid" id="featured-products">
+                        <!-- Featured products will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Product Listing Page -->
+        <section id="product-listing" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span>Home</span> > <span id="current-category">Products</span>
+                </div>
+                
+                <div class="listing-layout">
+                    <aside class="filters">
+                        <h4>Filters</h4>
+                        <div class="filter-group">
+                            <h5>Category</h5>
+                            <div id="category-filters">
+                                <!-- Category filters will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h5>Price Range</h5>
+                            <div class="price-range">
+                                <input type="range" id="price-range" min="0" max="200" value="200" class="form-control">
+                                <span>Up to $<span id="price-value">200</span></span>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h5>Rating</h5>
+                            <div id="rating-filters">
+                                <label><input type="checkbox" value="4"> 4+ Stars</label>
+                                <label><input type="checkbox" value="3"> 3+ Stars</label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="products-section">
+                        <div class="products-header">
+                            <span id="results-count">0 results</span>
+                            <select id="sort-select" class="form-control">
+                                <option value="relevance">Sort by Relevance</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Rating</option>
+                            </select>
+                        </div>
+                        <div class="products-grid" id="products-grid">
+                            <!-- Products will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details Page -->
+        <section id="product-details" class="page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <span>Home</span> > <span id="product-category">Category</span> > <span id="product-name">Product</span>
+                </div>
+                
+                <div class="product-layout">
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="main-product-image" src="" alt="Product Image">
+                        </div>
+                        <div class="thumbnail-images" id="thumbnail-images">
+                            <!-- Thumbnails will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <h2 id="product-title"></h2>
+                        <div class="product-rating">
+                            <span class="stars" id="product-stars"></span>
+                            <span id="product-review-count"></span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price" id="product-current-price"></span>
+                            <span class="original-price" id="product-original-price"></span>
+                        </div>
+                        <div class="product-description">
+                            <p id="product-description-text"></p>
+                        </div>
+                        <div class="product-features">
+                            <h4>Features:</h4>
+                            <ul id="product-features-list"></ul>
+                        </div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <label>Quantity:</label>
+                                <select id="quantity-select" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <button id="add-to-cart-btn" class="btn btn--primary btn--lg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Cart Page -->
+        <section id="shopping-cart" class="page">
+            <div class="container">
+                <h2>Shopping Cart</h2>
+                <div class="cart-layout">
+                    <div class="cart-items" id="cart-items">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    <div class="cart-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h4>Order Summary</h4>
+                                <div class="summary-row">
+                                    <span>Subtotal:</span>
+                                    <span id="cart-subtotal">$0.00</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Shipping:</span>
+                                    <span>$9.99</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <strong>Total: <span id="cart-total">$0.00</span></strong>
+                                </div>
+                                <button id="checkout-btn" class="btn btn--primary btn--full-width">Proceed to Checkout</button>
+                                <button id="continue-shopping-btn" class="btn btn--outline btn--full-width">Continue Shopping</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Checkout Page -->
+        <section id="checkout" class="page">
+            <div class="container">
+                <h2>Checkout</h2>
+                <div class="checkout-layout">
+                    <div class="checkout-form">
+                        <div class="card">
+                            <div class="card__body">
+                                <h4>Shipping Information</h4>
+                                <form id="checkout-form">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Address</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">ZIP Code</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <h4>Payment Method</h4>
+                                    <div class="payment-methods">
+                                        <label><input type="radio" name="payment" value="card" checked> Credit Card</label>
+                                        <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                                        <label><input type="radio" name="payment" value="cash"> Cash on Delivery</label>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Place Order</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h4>Order Summary</h4>
+                                <div id="checkout-items"></div>
+                                <div class="summary-row total">
+                                    <strong>Total: <span id="checkout-total">$0.00</span></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login/Register Pages -->
+        <section id="login" class="page">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class="auth-tabs">
+                                <button id="user-login-tab" class="auth-tab active">User Login</button>
+                                <button id="user-register-tab" class="auth-tab">Register</button>
+                            </div>
+                            <form id="user-login-form" class="auth-form active" action="LoginServlet" method="post">
+                                <h3>Login to KESHAB Enterprises</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name=email required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" name=password required>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
+                            </form>
+                            
+                            
+                            <form id="user-register-form" class="auth-form" action="RegisterServlet" method="post">
+                                <h3>Create Account</h3>
+
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="password" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" name="confirm_password" required>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Login Page -->
+        <section id="admin-login" class="page">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="card">
+                        <div class="card__body">
+                            <form id="admin-login-form" class="auth-form active">
+                                <h3>Admin Login - KESHAB Enterprises</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Admin Email</label>
+                                    <input type="email" class="form-control" value="admin@keshab.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" value="admin123" required>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">Admin Login</button>
+                                <button type="button" id="back-to-user-login" class="btn btn--outline btn--full-width">Back to User Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard" class="page">
+            <div class="admin-layout">
+                <aside class="admin-sidebar">
+                    <div class="admin-nav">
+                        <h3>KESHAB Admin</h3>
+                        <ul>
+                            <li><a href="#" class="admin-nav-link active" data-section="overview">Dashboard</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="products">Products</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="orders">Orders</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="users">Users</a></li>
+                            <li><a href="#" class="admin-nav-link" data-section="reports">Reports</a></li>
+                        </ul>
+                        <button id="admin-logout" class="btn btn--outline btn--full-width">Logout</button>
+                    </div>
+                </aside>
+
+                <main class="admin-content">
+                    <!-- Dashboard Overview -->
+                    <div id="admin-overview" class="admin-section active">
+                        <h2>Dashboard Overview</h2>
+                        <div class="kpi-grid">
+                            <div class="kpi-card">
+                                <h4>Total Orders</h4>
+                                <div class="kpi-value" id="total-orders">0</div>
+                            </div>
+                            <div class="kpi-card">
+                                <h4>Total Revenue</h4>
+                                <div class="kpi-value" id="total-revenue">$0</div>
+                            </div>
+                            <div class="kpi-card">
+                                <h4>Total Products</h4>
+                                <div class="kpi-value" id="total-products">0</div>
+                            </div>
+                            <div class="kpi-card">
+                                <h4>Total Users</h4>
+                                <div class="kpi-value" id="total-users">0</div>
+                            </div>
+                        </div>
+                        <div class="recent-orders">
+                            <h3>Recent Orders</h3>
+                            <div class="orders-table" id="recent-orders-table">
+                                <!-- Recent orders will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Management -->
+                    <div id="admin-products" class="admin-section">
+                        <div class="section-header">
+                            <h2>Product Management</h2>
+                            <button class="btn btn--primary">Add New Product</button>
+                        </div>
+                        <div class="products-table" id="admin-products-table">
+                            <!-- Products table will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Orders Management -->
+                    <div id="admin-orders" class="admin-section">
+                        <h2>Order Management</h2>
+                        <div class="orders-table" id="admin-orders-table">
+                            <!-- Orders table will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Users Management -->
+                    <div id="admin-users" class="admin-section">
+                        <h2>User Management</h2>
+                        <p>User management functionality would be implemented here.</p>
+                    </div>
+
+                    <!-- Reports -->
+                    <div id="admin-reports" class="admin-section">
+                        <h2>Sales Reports</h2>
+                        <p>Sales reports and analytics would be displayed here.</p>
+                    </div>
+                </main>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>KESHAB Enterprises</h4>
+                    <p>Your trusted online shopping destination</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>FAQ</li>
+                        <li>Returns</li>
+                        <li>Shipping Info</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Careers</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KESHAB Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
