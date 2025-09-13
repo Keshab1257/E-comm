@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - LuxeMarket</title>
+    <link rel="stylesheet" href="Signin.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Background Pattern -->
+        <div class="background-pattern"></div>
+        
+        <!-- Main Content -->
+        <div class="login-content">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h1 class="brand-name">KESHAB Enterprises: Your One-Stop Shop</h1>
+                <p class="brand-tagline">Where Premium Meets Convenience</p>
+            </div>
+
+            <!-- Login Form Card -->
+            <div class="login-card card">
+                <div class="card__body">
+                    <div class="login-header">
+                        <h2>Welcome Back</h2>
+                        <p class="login-subtitle">Sign in to your account to continue your premium experience</p>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div id="messageContainer" class="message-container hidden"></div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="login-form" method="post" action="RegisterServlet">
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Full Name
+                            </label>
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    spellcheck="false"
+                                    required
+                                >
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <div class="input-wrapper">
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    spellcheck="false"
+                                    required
+                                >
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                Password
+                            </label>
+                            <div class="input-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    class="form-control password-input"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    spellcheck="false"
+                                    required
+                                    minlength="6"
+                                >
+                                <div class="input-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <button type="button" class="password-toggle" id="passwordToggle" tabindex="-1" aria-label="Show password">
+                                    <i class="fas fa-eye" id="passwordToggleIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Keep me signed in & Forgot Password -->
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="keepSignedIn" name="keepSignedIn">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">Keep me signed in</span>
+                            </label>
+                            <a href="#" class="forgot-link" id="forgotPasswordLink">Forgot your password?</a>
+                        </div>
+
+                        <!-- Sign In Button -->
+                        <button type="submit" class="btn btn--primary btn--full-width btn--lg login-btn" id="loginBtn">
+                            <span class="btn-text">Sign In to Your Account</span>
+                            <span class="btn-spinner hidden">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                    </form>
+
+
+
+                    <!-- Sign Up Link -->
+                    <div class="signup-section">
+                        <p>Don't have an account? <a href="#" class="signup-link" id="createAccountLink">Create one now</a></p>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>🔒 Secured with 256-bit SSL encryption</span>
+                        </div>
+                        <div class="privacy-note">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Your data is protected and never shared</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="login-footer">
+                <div class="footer-links">
+                    <a href="#" class="footer-link" target="_blank">Terms of Service</a>
+                    <span class="footer-separator">•</span>
+                    <a href="#" class="footer-link" target="_blank">Privacy Policy</a>
+                    <span class="footer-separator">•</span>
+                    <a href="#" class="footer-link" target="_blank">Support</a>
+                </div>
+                <p class="footer-copyright">&copy; 2025 LuxeMarket. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="Signin.js"></script>
+</body>
+</html>

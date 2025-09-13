@@ -856,14 +856,13 @@ document.addEventListener('DOMContentLoaded', function() {
 //    });
 //  }
 
-  const userRegisterForm = document.getElementById('user-register-form');
-  if (userRegisterForm) {
-    userRegisterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Account created successfully!');
-      if (userLoginTab) userLoginTab.click();
-    });
-  }
+//  const userRegisterForm = document.getElementById('user-register-form');
+//  if (userRegisterForm) {
+//    userRegisterForm.addEventListener('submit', function(e) {
+//      e.preventDefault();
+//      if (userLoginTab) userLoginTab.click();
+//    });
+//  }
 
   // Admin authentication
   const adminLoginForm = document.getElementById('admin-login-form');

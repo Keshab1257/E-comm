@@ -57,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
             int cnt = stmt.executeUpdate();
 
             if (cnt > 0) {
-                response.sendRedirect("Loggin.html");
+                out.println("<h3>✅ Registration Successful! <a href='login.html'>Login here</a></h3>");
             } else {
                 out.println("<h3>️ Registration Failed. Try again!</h3>");
             }

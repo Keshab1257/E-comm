@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                response.sendRedirect("userloggedin.html");
+                response.sendRedirect("index.html");
             } else {
                 out.println("<h3>❌ Invalid email or password. Please try again.</h3>");
             }

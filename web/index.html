@@ -22,7 +22,6 @@
                     <button id="cart-btn" class="btn btn--outline">
                         🛒 Cart (<span id="cart-count">0</span>)
                     </button>
-                    <button id="login-btn" class="btn btn--secondary">Login</button>
                     <button id="admin-btn" class="btn btn--outline">Admin</button>
                 </div>
             </div>
@@ -268,61 +267,7 @@
         </section>
 
         <!-- Login/Register Pages -->
-        <section id="login" class="page">
-            <div class="container">
-                <div class="auth-container">
-                    <div class="card">
-                        <div class="card__body">
-                            <div class="auth-tabs">
-                                <button id="user-login-tab" class="auth-tab active">User Login</button>
-                                <button id="user-register-tab" class="auth-tab">Register</button>
-                            </div>
-                            <form id="user-login-form" class="auth-form active" action="LoginServlet" method="post">
-                                <h3>Login to KESHAB Enterprises</h3>
-                                <div class="form-group">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" name=email required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" name=password required>
-                                </div>
-                                <button type="submit" class="btn btn--primary btn--full-width">Login</button>
-                            </form>
-                            
-                            
-                            <form id="user-register-form" class="auth-form" action="RegisterServlet" method="post">
-                                <h3>Create Account</h3>
-
-                                <div class="form-group">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" name="name" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" name="confirm_password" required>
-                                </div>
-
-                                <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
-                            </form>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- Admin Login Page -->
         <section id="admin-login" class="page">
@@ -330,7 +275,7 @@
                 <div class="auth-container">
                     <div class="card">
                         <div class="card__body">
-                            <form id="admin-login-form" class="auth-form active">
+                            <form id="admin-login-form" class="auth-form active" action="AdminLoginServlet" method="post">
                                 <h3>Admin Login - KESHAB Enterprises</h3>
                                 <div class="form-group">
                                     <label class="form-label">Admin Email</label>
