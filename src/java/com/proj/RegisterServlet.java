@@ -45,7 +45,7 @@ public class RegisterServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
-            System.out.println(" Database connected!");
+            System.out.println(" Database connected successfully!");
 
             // Insert query
             String query = "INSERT INTO projectusers (name, email, password_hash) VALUES (?, ?, ?)";
