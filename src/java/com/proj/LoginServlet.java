@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            out.println("<h3>❌ Error: " + e.getMessage() + "</h3>");
+            out.println("<h3>❌ Error is happening: " + e.getMessage() + "</h3>");
         } finally {
             try {
                 if (rs != null) rs.close();
