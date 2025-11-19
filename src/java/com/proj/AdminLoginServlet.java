@@ -45,7 +45,7 @@ public class AdminLoginServlet extends HttpServlet {
             if (rs.next()) {
             response.sendRedirect("idex.html");    
             } else {
-                out.println("<h3 style='color:red;'>Invalid email or password</h3>");
+                out.println("<h3 style='color:red;'>Invalid email or password,Please provide a valid Mail or Password.</h3>");
                 out.println("<a href='adminLogin.html'>Try Again</a>");
             }
 
