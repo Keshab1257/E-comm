@@ -6,9 +6,6 @@ A modern Java-based e-commerce web application built with Java Servlets and a re
 
 
 
-------
-
-
 
 ## 📋 Table of Contents## 📋 Table of Contents
 
