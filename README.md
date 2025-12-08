@@ -2,7 +2,7 @@
 
 
 
-A modern Java-based e-commerce web application built with Java Servlets and a responsive front-end. This application offers user authentication, registration, and a seamless shopping experience, complemented by an intuitive admin dashboard. A modern Java-based e-commerce web application built with Java Servlets and a responsive front-end. This application offers user authentication, registration, and a seamless shopping experience, complemented by an intuitive admin dashboard.
+A modern Java-based e-commerce web application built with Java Servlets and a responsive front-end. This application offers user authentication, registration, and a seamless shopping experience, complemented by an intuitive admin dashboard. A modern Java-based Ecommerce web application built with Java Servlets and a responsive front-end. This application offers user authentication, registration, and a seamless shopping experience, complemented by an intuitive admin dashboard.
 
 
 
